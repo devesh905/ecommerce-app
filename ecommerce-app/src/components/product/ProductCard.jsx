@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import StarRating from '../common/StarRating';
 import { formatPrice } from '../../utils/format';
@@ -10,11 +11,16 @@ import { useCart } from '../../context/CartContext';
  */
 export default function ProductCard({ product }) {
   const { addItem } = useCart();
+  const [isAdded, setIsAdded] = useState(false);
 
   function handleAddToCart(event) {
     event.preventDefault();
     event.stopPropagation();
     addItem(product, 1);
+    setIsAdded(true);
+    setTimeout(() => {
+      setIsAdded(false);
+    }, 1500);
   }
 
   return (
@@ -34,9 +40,10 @@ export default function ProductCard({ product }) {
         type="button"
         className="btn btn--primary btn--full"
         onClick={handleAddToCart}
-        disabled={product.stock === 0}
+        disabled={product.stock === 0 || isAdded}
+        style={isAdded ? { background: 'var(--color-success)', color: '#fff' } : undefined}
       >
-        {product.stock === 0 ? 'Unavailable' : 'Add to cart'}
+        {product.stock === 0 ? 'Unavailable' : isAdded ? '✓ Added' : 'Add to cart'}
       </button>
     </Link>
   );

@@ -105,6 +105,9 @@ export default function ProductDetailPage() {
 
           {justAdded && (
             <p className="confirmation-message" role="status">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '4px', flexShrink: 0 }}>
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
               Added {quantity} {quantity === 1 ? 'item' : 'items'} to your cart.
             </p>
           )}
