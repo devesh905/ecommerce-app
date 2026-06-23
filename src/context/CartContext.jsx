@@ -1,7 +1,7 @@
 import { createContext, useContext, useReducer, useMemo, useEffect } from 'react';
 
 const CartContext = createContext(null);
-const STORAGE_KEY = 'shopfront_cart_v1';
+const STORAGE_KEY = 'aarvi_shop_cart_v1';
 
 function loadInitialState() {
   try {

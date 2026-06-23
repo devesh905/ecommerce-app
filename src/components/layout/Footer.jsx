@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer__grid">
         <div>
-          <p className="footer__logo">Shopfront</p>
+          <p className="footer__logo"> Aarvi's Shop</p>
           <p className="footer__tagline">Quality products, fair prices, fast shipping.</p>
         </div>
 
@@ -38,7 +38,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <p className="footer__copyright">© {year} Shopfront. All rights reserved.</p>
+      <p className="footer__copyright">© {year}  Aarvi's Shop. All rights reserved.</p>
     </footer>
   );
 }

@@ -1,4 +1,4 @@
-# Shopfront
+#  Aarvi's Shop
 
 A clean, production-ready React e-commerce storefront with multi-category browsing, product detail pages, and a persistent shopping cart.
 

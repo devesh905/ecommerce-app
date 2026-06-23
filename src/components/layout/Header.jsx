@@ -70,7 +70,7 @@ export default function Header({ categories, onCartClick, theme, onThemeToggle }
     <header className="header">
       <div className="header__bar container">
         <Link to="/" className="header__logo" onClick={() => setMenuOpen(false)}>
-          Shopfront
+          Aarvi's Shop
         </Link>
 
         <form className="header__search" role="search" onSubmit={handleSearchSubmit}>
