@@ -59,18 +59,3 @@ adding a new `<Route>` inside it.
 same `Spinner` / `ErrorMessage` components in the same pattern, so behavior
 doesn't drift between pages.
 
-## Extending this
-
-- **Connect a real backend**: implement the functions in `services/api.js` with `fetch()`/`axios` calls; set `VITE_API_BASE_URL` in `.env` (see `.env.example`).
-- **Add authentication**: a `context/AuthContext.jsx` following the same pattern as `CartContext.jsx` would slot in cleanly, with a `ProtectedRoute` wrapper around checkout-related routes.
-- **Add checkout**: `CartPage`'s "Proceed to checkout" button is a stub — wire it to a new `/checkout` route and a payment provider.
-- **Pagination/infinite scroll**: `getProducts()` already accepts an options object; add `page`/`limit` params there first.
-- **Testing**: component boundaries are kept narrow specifically so each one (ProductCard, useAsync, cartReducer, etc.) is easy to unit test in isolation.
-
-## Production deployment
-
-`npm run build` outputs a static `dist/` folder — deploy it to any static
-host (Vercel, Netlify, S3+CloudFront, GitHub Pages with a basename, etc.).
-Because routing is client-side, configure your host to redirect all paths to
-`index.html` (a SPA fallback rule) so deep links like `/product/e-001` don't
-404 on refresh.
